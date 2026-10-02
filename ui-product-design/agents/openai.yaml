@@ -1,0 +1,4 @@
+interface:
+  display_name: "UI 产品设计"
+  short_description: "为 Web、App 与微信小程序设计有辨识度、可验证的完整任务体验"
+  default_prompt: "使用 $ui-product-design，为当前产品设计并实现界面，验证核心流程并进行独立评审。"

@@ -1,0 +1,16 @@
+# Generated bundles and local runtime artifacts
+*.zip
+__pycache__/
+*.py[cod]
+.venv/
+node_modules/
+.env
+.env.*
+!.env.example
+*.internal.txt
+demo/
+
+# Keep portable validation, not local review histories or screenshots
+validation/*
+!validation/check_package.py
+!validation/summary.md
