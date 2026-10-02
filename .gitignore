@@ -10,7 +10,6 @@ node_modules/
 *.internal.txt
 demo/
 
-# Keep portable validation, not local review histories or screenshots
-validation/*
-!validation/check_package.py
-!validation/summary.md
+# Generated checks and private local working records
+build/
+validation/

@@ -1,51 +1,81 @@
 # UI Product Design
 
-一个中文 UI/UX 设计 Skill，适用于 Web、移动 App 和微信小程序。连接着陆页与真实任务，兼顾视觉表达、完整交互和平台验证。
+[![Validate](https://github.com/Iskuyal/ui-product-design/actions/workflows/validate.yml/badge.svg)](https://github.com/Iskuyal/ui-product-design/actions/workflows/validate.yml) · [MIT License](LICENSE)
 
-## 开始使用
+一套面向 **Web、移动 App 和微信小程序** 的中文 UI/UX 设计 Skill：从用户任务出发，建立有辨识度的视觉方向，完成页面、状态和实际验证。
 
-将整个 `ui-product-design` 文件夹放入当前工具的 Skills 目录，保留其内部结构。在已安装环境调用：
+适用于 Codex 及能读取 `SKILL.md` 的 Agent Skills 工具。仓库提供设计工作流，不附带成品组件库，也不绑定某个前端框架。
+
+## 快速开始
+
+在支持 `$skill-installer` 的 Codex 环境中，可以使用：
+
+```text
+使用 $skill-installer 安装 https://github.com/Iskuyal/ui-product-design/tree/main/skills/ui-product-design
+```
+
+也可将 [skills/ui-product-design](skills/ui-product-design/) 整个文件夹复制到工具的 Skills 目录。Codex 手动安装与已有版本更新见 [安装与使用](docs/getting-started.md)。
+
+安装后，在实际项目中输入：
 
 ```text
 使用 $ui-product-design，为当前项目设计并实现着陆页和后续任务页面，验证主 CTA、任务完成及失败恢复。
 ```
 
-想实际测试效果，可复制 [网页测试提示词](examples/web-test-prompt.md)，在独立的 Web 项目中运行。它提供产品内容和可验证任务，把配色、字体、构图与图形判断留给 Skill。
+想先看效果，复制 [完整网页测试提示词](examples/web-test-prompt.md)：它用“巷外”漫游规划场景测试着陆页、探索、详情与个人计划，给出产品任务，把配色、字体、构图和图形判断留给 Skill。
 
-## 工作方式
+## 什么时候使用
 
-- 先明确用户成果、主要任务、入口和恢复路径，再决定页面与视觉。
-- 自由创作可用 shell 随机串启发，明确品牌和参考仍优先；种子不进入用户界面。
-- 区分新设计、改版、仅设计与轻量修改，保护已有行为与共享组件影响面。
-- 分别处理 Web、原生/跨端 App 和微信小程序的导航、单位与辅助功能。
-- 用真实渲染和交互证据验证；需要评审时使用新上下文、固定提示和同版本证据。
-- 普通任务按范围与具体缺陷完成；高分精修只在明确要求时启用，避免无限追分。
-
-像素艺术、特色插画和动态场景是可选表达，成熟工作台可以通过内容层级与效率完成设计，不强制加装饰。
-
-## 目录
-
-| 路径 | 用途 |
+| 场景 | 工作重点 |
 |---|---|
-| [ui-product-design/SKILL.md](ui-product-design/SKILL.md) | Skill 入口 |
-| [references](ui-product-design/references/) | 按需读取的任务、视觉、平台、动效及评审规则 |
-| [随机种子脚本](ui-product-design/scripts/new-design-seed.ps1) | 长度可配置的字母数字串 |
-| [research.md](research.md) | 文献研究、来源版本、采用与修正的理由 |
-| [网页测试提示词](examples/web-test-prompt.md) | 完整网页试用场景 |
-| [验证摘要](validation/summary.md) | 已验证内容与证据范围 |
-| [check_package.py](validation/check_package.py) | 编码、链接、配置及脚本契约检查 |
+| 新界面 / 着陆页 | 内容与任务路径、视觉方向、页面和状态 |
+| 已有产品改版 | 保留行为和数据契约，记录基线与共享组件影响面 |
+| 仅设计 | 交付可审阅稿件或原型，明确未实现的交互 |
+| 局部文字 / 样式调整 | 缩小流程，核对动作含义和必要影响 |
 
-本仓库保留源码与可复用记录；本地截图、内部随机串、临时浏览器目录和重复生成的ZIP不纳入版本控制。
+像素艺术、特色插画与动态场景都是可选表达。高频任务页面可以依靠成熟组件与信息效率完成设计；准确设计稿还原和纯后端工作无需启动完整创作流程。
 
-## 验证
+## 设计原则
 
-包校验需要 Python、PyYAML 和已有的 PowerShell 7 或 Windows PowerShell。运行：
+- **任务先于页面**：连接入口、用户动作、可见成果与失败恢复。
+- **创意有语境**：可用随机串发散，品牌、内容和用户约束决定最终选择。
+- **跨端分别适配**：共用品牌与任务词汇，分别处理导航、单位、辅助功能和设备证据。
+- **验证来自实际结果**：截图、交互、模拟器、真机与用户研究分别报告。
+- **评审推动改进**：固定提示、独立上下文、同版本证据；普通任务不为追分无限迭代。
 
-```powershell
-python -X utf8 -m pip install -r requirements-dev.txt
-python -X utf8 validation/check_package.py
+## 项目结构
+
+```text
+skills/ui-product-design/   可独立安装的 Skill
+  SKILL.md                 入口与分流
+  agents/                  展示与调用配置
+  references/              按需读取的设计、平台与评审规则
+  scripts/                 运行时辅助脚本
+  LICENSE                  安装包随附许可
+docs/                      安装、研究、来源与验证说明
+examples/                  可复制的试用提示词
+scripts/                   仓库开发校验
+.github/workflows/         Windows / Linux 自动校验
 ```
 
-校验生成的 `validation/package-check.json` 是本机报告，不提交。校验通过证明文件结构与脚本契约，不证明实际页面审美、真实服务、真机或完整可访问性验收。
+本地演示应用、内部随机串、截图、临时浏览器数据和生成报告不纳入版本控制。
 
-方法由公开文章、oil 系列仓库、一手规范与研究综合整理；来源和访问范围见 [sources.md](ui-product-design/references/sources.md)。没有复制上游组件、字体或付费内容。
+## 开发与验证
+
+开发校验需要 Python 3.10+、PyYAML 和已有的 PowerShell 7 或 Windows PowerShell；使用 Skill 本身不需要安装 Python。
+
+```sh
+python -X utf8 -m pip install -r requirements-dev.txt
+python -X utf8 scripts/validate.py
+```
+
+校验覆盖 Skill 配置、仓库文档链接、许可一致性和随机脚本契约，报告生成于 `build/validation.json`。自动校验使用 Windows 与 Linux；CI 不等于实际产品的审美、真机或可访问性验收。详见 [验证范围](docs/validation.md)。
+
+## 文档与贡献
+
+- [安装、调用与更新](docs/getting-started.md)
+- [方法研究与取舍](docs/research.md)
+- [来源与授权说明](docs/attribution.md)
+- [贡献指南](CONTRIBUTING.md)
+
+原创代码和文档采用 [MIT](LICENSE)。链接到的文章、研究、字体或第三方素材仍按各自权利与许可处理。
