@@ -43,6 +43,8 @@
 - **验证来自实际结果**：截图、交互、模拟器、真机与用户研究分别报告。
 - **评审推动改进**：固定提示、独立上下文、同版本证据；普通任务不为追分无限迭代。
 
+需要更精炼或可分步的指令时，使用 [通用设计提示词](skills/ui-product-design/references/prompt-recipes.md)：将视觉层级、分组、构图节奏、渐进呈现和错误恢复对应到实际决定与检查。大小模型均可使用，短契约为可选工具，不宣称关键词能激活特定 MoE 专家。
+
 ## 项目结构
 
 ```text
@@ -75,6 +77,8 @@ python -X utf8 scripts/validate.py
 
 - [安装、调用与更新](docs/getting-started.md)
 - [方法研究与取舍](docs/research.md)
+- [UI/UX 与通用提示词的新研究](docs/research-ui-prompting-2026-10-07.md)
+- [可复制的通用提示词](examples/general-design-prompt.md)
 - [来源与授权说明](docs/attribution.md)
 - [贡献指南](CONTRIBUTING.md)
 

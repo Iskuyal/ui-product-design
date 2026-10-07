@@ -1,6 +1,6 @@
 # 来源与取舍
 
-核查日期：2026-10-02。用途是解释设计方法，不代替当前项目的运行验证。本文为原创整理，不包含上游代码、组件或字体资产；复制上游实质内容时另行遵守其许可证。
+初版核查日期：2026-10-02；通用提示词补充：2026-10-07。用途是解释设计方法，不代替当前项目的运行验证。本文为原创整理，不包含上游代码、组件或字体资产；复制上游实质内容时另行遵守其许可证。
 
 ## 创作与工程方法
 
@@ -24,4 +24,13 @@
 - [微信无障碍组件](https://developers.weixin.qq.com/miniprogram/dev/component/aria-component.html)、[页面路由](https://developers.weixin.qq.com/miniprogram/dev/framework/app-service/route.html)、[WXSS](https://developers.weixin.qq.com/miniprogram/dev/framework/view/wxss.html)、[窗口信息](https://developers.weixin.qq.com/miniprogram/dev/api/base/system/wx.getWindowInfo.html)、[胶囊区域](https://developers.weixin.qq.com/miniprogram/dev/api/ui/menu/wx.getMenuButtonBoundingClientRect.html)：已通过普通只读 HTTP 阅读公开正文。部分 ARIA 与双端朗读差异、tabBar 路由、safeArea 缺失与方向约束需要实施时复查；抓取器失败不等于官方内容不可访问。
 - [NN/g 可用性启发式](https://www.nngroup.com/articles/ten-usability-heuristics/)、[任务场景](https://www.nngroup.com/articles/task-scenarios-usability-testing/)、[可用性测试方法](https://www.nngroup.com/articles/usability-testing-101/)：用于发现问题及设计真实任务观察。启发式走查、AI 模拟、真人研究分别报告；不能编造参与者、成功率或转化效果。
 
-本 Skill 的顺序、完成标准、跨端选择和评审控制为以上资料与用户要求的综合设计。独立评分只说明给定输入下的评审判断；交互、平台和真实用户证据仍需分别取得。
+## 2026-10-07：通用提示词补充
+
+- [NN/g 视觉原则](https://www.nngroup.com/articles/principles-visual-design/)、[邻近关系](https://www.nngroup.com/articles/gestalt-proximity/)、[共同区域](https://www.nngroup.com/articles/common-region/)：用于把层级、分组与容器选择转成具体决定，不固定像素、卡片数量或所有页面的外观。
+- [NN/g 渐进呈现](https://www.nngroup.com/articles/progressive-disclosure/)、[GOV.UK Details](https://design-system.service.gov.uk/components/details/)：少用补充与独立阶段分别处理，核心条件保持可见。
+- [GOV.UK 错误提示](https://design-system.service.gov.uk/components/error-message/)、[错误汇总](https://design-system.service.gov.uk/components/error-summary/)、[W3C 输入标签/说明](https://www.w3.org/WAI/WCAG22/Understanding/labels-or-instructions.html)：用于定位问题、保留输入及标签一致；不机械照搬某个系统的组件规范到所有平台。
+- [Mistral 提示指南](https://docs.mistral.ai/inference/prompting)：模型作者建议明确目标、结构、格式和示例，并根据具体模型实际评估；不是通用效果量证明。
+- [Decomposed Prompting](https://arxiv.org/abs/2210.02406)：在原论文的推理/问答任务中研究分解和子任务示例。这里只借鉴工作方式，不把结果推导为 UI 审美或所有模型收益。
+- [Mixtral 原作者说明](https://mistral.ai/news/mixtral-of-experts/)、[Qwen 使用文档](https://qwen.readthedocs.io/en/latest/getting_started/quickstart.html)：MoE 路由属于训练后的模型机制，提示与聊天模板需要按模型处理；当前资料没有“设计关键词 → 指定专家”的可保证映射。
+
+本 Skill 的顺序、完成标准、跨端选择、提示词和评审控制为以上资料与用户要求的综合设计。独立评分只说明给定输入下的评审判断；交互、平台和真实用户证据仍需分别取得。
